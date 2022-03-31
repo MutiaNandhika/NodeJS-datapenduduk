@@ -1,0 +1,32 @@
+header.main-header 
+    a(href='/').logo 
+        span.logo-mini 
+            <b>A</b> LT 
+        span.logo-lg 
+            <b>Data</b> Penduduk 
+    nav(role='navigation').navbar.navbar-static-top 
+        a(href='#', role='button', data-toggle='offcanvas').sidebar-toggle  
+            span.sr-only Toggle Navigation 
+            span.icon-bar 
+            span.icon-bar 
+            span.icon-bar 
+        div.navbar-custom-menu 
+            ul.nav.navbar-nav 
+                
+                li.dropdown.user.user-menu 
+                    a(href='#',data-toggle='dropdown').dropdown-toggle
+                        img(src='/adminlte/dist/img/mutia.jpg',alt='User Image').user-image 
+                        span.hidden-xs 
+                            | Mutia Nandhika 
+                    ul.dropdown-menu 
+                        li.user-header 
+                            img(src='/adminlte/dist/img/mutia.jpg',alt='User Image').img-circle
+                            p 
+                                | Mutia Nandhika - Web Developer 
+                                small 
+                                    | Member since Okt. 2021 
+                        
+                        li.user-footer 
+                            .pull-right 
+                                a(href='/logout').btn.btn-default.btn-flat 
+                                    | Sign out 

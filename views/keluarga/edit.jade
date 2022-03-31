@@ -1,0 +1,79 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Edit Keluarga
+			small menu for editing data keluarga
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Level 
+			li.active Here 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| Keluarga
+				.box-tools.pull-right
+					button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+					
+			.box-body
+				form(role='form',method='post' action='/keluargas/edit/#{(id==undefined) ? data.id : id}')
+					.row
+						
+						.col-xs-6
+							.box-body
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button', data-dismiss='alert', aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if (messages.msg_info) 
+									.alert.alert-success.alert-dismissable 
+										button.close(type='button', data-dismiss='alert', aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Success! 
+										| !{messages.msg_info}
+								.form-group
+									label
+										| Nomor KK
+									input(type='text',value="#{ (nokk == undefined) ? data.nokk : nokk }",name='nokk',placeholder='Enter Nomor KK').form-control
+								.form-group
+									label
+										| Kepala Keluarga
+									input(type='text',value="#{ (nama_kep == undefined) ? data.nama_kep : nama_kep }",name='nama_kep',placeholder='Enter Nama Kepala').form-control
+								
+								.form-group
+									label
+										| NIK Kepala
+									input(type='text',value="#{ (nik_kep == undefined) ? data.nik_kep : nik_kep }",name='nik_kep',placeholder='Enter NIK').form-control
+								.form-group
+									label
+										| Jumlah
+									input(type='text',value="#{ (jumlah == undefined) ? data.jumlah : jumlah }",name='jumlah',placeholder='Enter Jumlah Anggota').form-control
+								.form-group
+									label
+										| Alamat
+									input(type='text',value="#{ (alamat == undefined) ? data.alamat : alamat }",name='alamat',placeholder='Enter Alamat').form-control
+								.form-group
+									label
+										| RT
+									input(type='text',value="#{ (rt == undefined) ? data.rt : rt }",name='rt',placeholder='Enter RT').form-control
+								.form-group
+									label
+										| RW
+									input(type='text',value="#{ (rw == undefined) ? data.rw : rw }",name='rw',placeholder='Enter RW').form-control
+							.box-footer
+								input(type="hidden",name="_method", value="PUT")
+								button(type='submit').btn.btn-primary
+									i.fa.fa-pencil 
+									|  Edit
+								a(href='/keluargas').btn.btn-primary.pull-right
+									| Back
